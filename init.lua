@@ -7,8 +7,7 @@ if vim.g.neovide then
     require("config.neovide")
 end
 
--- nvim-treesitter
+require("config.whichkey")
+require("config.lsp")
 require("config.treesitter")
 
--- lsp
-require("config.lsp")

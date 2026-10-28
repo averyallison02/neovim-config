@@ -45,7 +45,7 @@ return {
 	    { "<leader>e", function() Snacks.explorer() end, desc = "Explorer" },
 
 	    { "<leader>fp", function() Snacks.picker.projects() end, desc = "Projects"},
-	    { "<leader>ft", function() Snacks.terminal() end, desc = "Terminal" },
+	    { "<leader>t", function() Snacks.terminal() end, desc = "Terminal" },
 	}
     }
 }
