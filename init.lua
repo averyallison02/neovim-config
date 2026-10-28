@@ -4,10 +4,10 @@ require("config.opt")
 
 -- neovide only config
 if vim.g.neovide then
-    require("config.neovide")
+	require("config.neovide")
 end
 
-require("config.whichkey")
+require("config.barbar")
 require("config.lsp")
 require("config.treesitter")
-
+require("config.whichkey")
