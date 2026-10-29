@@ -1,3 +1,5 @@
+local ollama_model = "deepseek-r1:8b"
+
 return {
 	{
 		"folke/snacks.nvim",
@@ -26,7 +28,14 @@ return {
 			lazygit = { enabled = false },
 			notifier = { enabled = true },
 			notify = { enabled = true },
-			picker = { enabled = true },
+			picker = {
+				enabled = true,
+				sources = {
+					explorer = {
+						auto_close = true,
+					},
+				},
+			},
 			profiler = { enabled = false },
 			quickfile = { enabled = false },
 			rename = { enabled = true },
@@ -45,13 +54,19 @@ return {
 			{
 				"<leader>e",
 				function()
-					Snacks.explorer()
+					Snacks.explorer({ auto_close = true })
 				end,
 				desc = "Explorer",
 			},
-
 			{
-				"<leader>fp",
+				"<leader>o",
+				function()
+					Snacks.terminal("ollama run " .. ollama_model)
+				end,
+				desc = "Ollama",
+			},
+			{
+				"<leader>p",
 				function()
 					Snacks.picker.projects({ confirm = { "tcd", "picker_explorer" } })
 				end,
@@ -63,6 +78,36 @@ return {
 					Snacks.terminal()
 				end,
 				desc = "Terminal",
+			},
+
+			-- find
+			{
+				"<leader><space>",
+				function()
+					Snacks.picker.smart()
+				end,
+				desc = "Smart Find Files",
+			},
+			{
+				"<leader>fb",
+				function()
+					Snacks.picker.buffers()
+				end,
+				desc = "Buffers",
+			},
+			{
+				"<leader>ff",
+				function()
+					Snacks.picker.files()
+				end,
+				desc = "Find Files",
+			},
+			{
+				"<leader>fg",
+				function()
+					Snacks.picker.git_files()
+				end,
+				desc = "Find Git Files",
 			},
 		},
 	},
