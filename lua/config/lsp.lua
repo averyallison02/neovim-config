@@ -46,6 +46,7 @@ vim.lsp.config("lua_ls", {
 
 vim.lsp.enable("gopls")
 vim.lsp.enable("lua_ls")
+vim.lsp.enable("shuck")
 
 -- diagnostic
 vim.diagnostic.config({
