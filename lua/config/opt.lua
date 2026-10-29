@@ -4,3 +4,6 @@ vim.opt.relativenumber = true
 
 -- tabs
 vim.opt.shiftwidth = 4
+
+-- system clipboard
+vim.opt.clipboard = "unnamedplus"
