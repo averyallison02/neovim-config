@@ -6,3 +6,10 @@ if vim.fn.argc() == 0 then
 		end,
 	})
 end
+
+-- terminal mode quit
+vim.api.nvim_create_autocmd("TermEnter", {
+	callback = function()
+		vim.keymap.set("t", "<Esc><Esc>", "<cmd>q<CR>", { buf = 0 })
+	end,
+})
