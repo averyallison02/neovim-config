@@ -1,5 +1,3 @@
-local ollama_model = "deepseek-r1:8b"
-
 return {
 	{
 		"folke/snacks.nvim",
@@ -61,7 +59,7 @@ return {
 			{
 				"<leader>o",
 				function()
-					Snacks.terminal("ollama run " .. ollama_model)
+					Snacks.terminal("ollmcp")
 				end,
 				desc = "Ollama",
 			},
