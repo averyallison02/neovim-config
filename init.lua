@@ -9,5 +9,6 @@ end
 
 require("config.barbar")
 require("config.lsp")
+require("config.snacks")
 require("config.treesitter")
 require("config.whichkey")
